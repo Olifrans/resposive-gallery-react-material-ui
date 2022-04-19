@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import "./galleryImage.css";
-import CloseIcon from '@mui/icons-material/Close';
-
+import CloseIcon from "@mui/icons-material/Close";
 import data from "./data";
 
-
-
 const GalleryImage = () => {
-
-
 
   const [model, setModel] = useState(false);
   const [tempimgSrc, setTempImgSrc] = useState("");
@@ -21,16 +16,17 @@ const GalleryImage = () => {
   return (
     <>
       <div className={model ? "model open" : "model"}>
-
         <img src={tempimgSrc} />
-        <CloseIcon onClick={() => setModel(false)} /> 
-
+        
+        <CloseIcon onClick={() => setModel(false)} />
       </div>
 
       <div className="gallery">
         {data.imgData.map((item, index) => {
           return (
-            <div className="pics" key={index}
+            <div
+              className="pics"
+              key={index}
               onClick={() => getImg(item.imgSrc)}
             >
               <img src={item.imgSrc} style={{ width: "100%" }} />
